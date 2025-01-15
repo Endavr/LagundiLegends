@@ -2,7 +2,7 @@
 import React from "react";
 
 const Navbar: React.FC = () => {
-  const styles = {
+  const styles: { [key: string]: React.CSSProperties } = {
     navbar: {
       display: "flex",
       justifyContent: "space-between",
@@ -15,10 +15,6 @@ const Navbar: React.FC = () => {
       top: "0",
       zIndex: "1000",
       width: "100%",
-      
-     
-    
-
     },
     logo: {
       fontSize: "1.5rem",
@@ -30,20 +26,14 @@ const Navbar: React.FC = () => {
       display: "flex",
       listStyle: "none",
       gap: "20px",
-      fontWeight: "bold"
-      
-      
-      
+      fontWeight: "bold",
     },
     link: {
       color: "white",
       textDecoration: "none",
       fontSize: "1rem",
       cursor: "pointer",
-
-    
       transition: "all 0.3s ease-in-out",
-
     },
     buttons: {
       display: "flex",
@@ -72,37 +62,69 @@ const Navbar: React.FC = () => {
 
   return (
     <header style={styles.navbar}>
-      <div style={styles.logo}><img src="4.png" alt="Silan Dental Clinic" style={{ width: '120px', height: 'auto' }}/>Siland Dental Clinic</div>
+      <div style={styles.logo}>
+        <img
+          src="4.png"
+          alt="Silan Dental Clinic"
+          style={{ width: "120px", height: "auto" }}
+        />
+        Silan Dental Clinic
+      </div>
       <nav>
         <ul style={styles.navLinks}>
-          <li><a style={styles.link} href="#services">Services</a></li>
-          <li><a style={styles.link} href="#about">About Us</a></li>
-          <li><a style={styles.link} href="#contact">Contact Us</a></li>
-          <li><a style={styles.link} href="#faqs">FAQs</a></li>
+          <li>
+            <a style={styles.link} href="#services">
+              Services
+            </a>
+          </li>
+          <li>
+            <a style={styles.link} href="#about">
+              About Us
+            </a>
+          </li>
+          <li>
+            <a style={styles.link} href="#contact">
+              Contact Us
+            </a>
+          </li>
+          <li>
+            <a style={styles.link} href="#faqs">
+              FAQs
+            </a>
+          </li>
         </ul>
       </nav>
       <div style={styles.buttons}>
-      <a href="/login" style={{ textDecoration: "none" }}>
-        <button style={styles.loginBtn}onMouseEnter={(e) =>
-              {e.currentTarget.style.backgroundColor = "#AAFF00"
-                e.currentTarget.style.transform = "scale(1.01)";
-              }
-              
-            }
-            onMouseLeave={(e) =>
-              {e.currentTarget.style.backgroundColor = "#ccc"
-                e.currentTarget.style.transform = "scale(1)";
-              }
-            }>Login</button></a>
+        <a href="/login" style={{ textDecoration: "none" }}>
+          <button
+            style={styles.loginBtn}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "#AAFF00";
+              e.currentTarget.style.transform = "scale(1.01)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "#ccc";
+              e.currentTarget.style.transform = "scale(1)";
+            }}
+          >
+            Login
+          </button>
+        </a>
         <a href="/register" style={{ textDecoration: "none" }}>
-        <button style={styles.registerBtn}onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "#008000";
+          <button
+            style={styles.registerBtn}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "#006600";
               e.currentTarget.style.transform = "scale(1.01)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.backgroundColor = "#008000";
               e.currentTarget.style.transform = "scale(1)";
-            }}>Register</button></a>
+            }}
+          >
+            Register
+          </button>
+        </a>
       </div>
     </header>
   );
