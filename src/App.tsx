@@ -1,29 +1,20 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navbar from "./pages/navbar"; // Import Navbar component
-import Login from "./pages/login"; // Import Login page
-import SignUp from "./pages/signup"; // Import SignUp page
-import Footer from "./pages/footer"; // Import Footer component
-import Landing from "./pages/landing"; // import landing page
-import Feedback from "./pages/feedback"; // import feedback page
-
+import Navbar from "./pages/navbar";
+import Login from "./pages/login";
+import SignUp from "./pages/signup";
+import Footer from "./pages/footer";
+import Landing from "./pages/landing";
 
 const App: React.FC = () => {
   return (
     <Router>
       <div>
-        {/* Navbar is always displayed */}
         <Navbar />
-
-        {/* Routing */}
         <Routes>
-          {/* Set the landing page to be the default (root) page */}
-          <Route path="/" element={<Landing />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/feedback" element={<Feedback />} />
-\        </Routes>
-
-        {/* Footer is always displayed */}
+          <Route path="/landing" element={<Landing />} />
+        </Routes>
         <Footer />
       </div>
     </Router>
